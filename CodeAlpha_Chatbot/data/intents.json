@@ -1,0 +1,437 @@
+{
+  "profile": {
+    "name": "FoodieBot",
+    "tagline": "Decide what to eat, discover recipes and cook with what you already have."
+  },
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "hey there",
+        "hello there",
+        "hi there",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "howdy",
+        "yo",
+        "greetings",
+        "hiya",
+        "is anyone there",
+        "hello foodiebot",
+        "hey foodie",
+        "sup",
+        "hii",
+        "helo",
+        "namaste"
+      ],
+      "responses": [
+        "Hi there! 👋 I'm FoodieBot. Tell me what's in your kitchen, or ask me what to eat today!",
+        "Hello, foodie! 🍽️ Hungry? I can suggest meals, find recipes or cook with what you have.",
+        "Hey! 👋 Ready to cook something delicious? Tell me your ingredients or ask for an idea."
+      ],
+      "suggestions": [
+        "What should I eat?",
+        "Cook with what I have",
+        "Surprise me"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "see you later",
+        "talk to you later",
+        "bye bye",
+        "i am leaving",
+        "have a nice day",
+        "catch you later",
+        "that is all",
+        "nothing else",
+        "i am done",
+        "good night",
+        "cya",
+        "time to cook bye"
+      ],
+      "responses": [
+        "Goodbye! Enjoy your meal 😋",
+        "Happy cooking! Come back whenever you're hungry. 👩‍🍳",
+        "Bye! Bon appétit! 🍽️"
+      ],
+      "suggestions": []
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks",
+        "thank you",
+        "thanks a lot",
+        "thank you so much",
+        "that is helpful",
+        "awesome thanks",
+        "great thank you",
+        "appreciate it",
+        "ty",
+        "many thanks",
+        "cool thanks",
+        "perfect thanks",
+        "you are helpful",
+        "nice thank you",
+        "yum thanks",
+        "looks delicious thanks"
+      ],
+      "responses": [
+        "You're welcome! Enjoy your cooking 😊",
+        "Happy to help! Want another idea?",
+        "Anytime! Let me know how it turns out. 👩‍🍳"
+      ],
+      "suggestions": [
+        "Surprise me",
+        "Plan my meals today"
+      ]
+    },
+    {
+      "tag": "bot_identity",
+      "patterns": [
+        "who are you",
+        "what are you",
+        "are you a bot",
+        "are you human",
+        "what is your name",
+        "your name",
+        "am i talking to a robot",
+        "are you ai",
+        "who made you",
+        "introduce yourself",
+        "are you a chef"
+      ],
+      "responses": [
+        "I'm FoodieBot 🤖👩‍🍳, an AI cooking assistant. I understand your questions with a machine-learning model and search my recipe book to help you decide what to eat and cook with what you have."
+      ],
+      "suggestions": [
+        "What can you do?",
+        "Surprise me"
+      ]
+    },
+    {
+      "tag": "capabilities",
+      "patterns": [
+        "what can you do",
+        "how can you help me",
+        "help",
+        "what do you know",
+        "what can i ask you",
+        "what are your features",
+        "i need help",
+        "can you help me",
+        "options",
+        "menu",
+        "show me what you can do",
+        "how does this work",
+        "how do i use you"
+      ],
+      "responses": [
+        "Here's what I can do:\n• 🥕 Find recipes from ingredients you already have (\"I have eggs, onion and tomato\")\n• 🤔 Suggest what to eat — by meal, diet, time or cuisine (\"quick vegetarian dinner\")\n• 📖 Show full recipes step by step (\"how to make pancakes\")\n• 🔄 Suggest ingredient substitutes (\"no eggs, what can I use?\")\n• 🗓️ Plan your meals for the day\n• 🥗 Healthy picks and cooking tips\nTell me if you're vegetarian or vegan and I'll remember it!"
+      ],
+      "suggestions": [
+        "Cook with what I have",
+        "Quick vegetarian dinner",
+        "Surprise me"
+      ]
+    },
+    {
+      "tag": "cook_with_ingredients",
+      "action": "ingredient_search",
+      "patterns": [
+        "what can i cook with what i have",
+        "what can i make with these ingredients",
+        "i have eggs and tomatoes",
+        "i have chicken rice and onion",
+        "what can i cook with potatoes",
+        "recipes with what is in my fridge",
+        "use up my leftovers",
+        "what to cook with leftover rice",
+        "i only have a few ingredients",
+        "find recipes by ingredients",
+        "cook with what i have",
+        "my fridge has milk eggs and bread",
+        "suggest a recipe using paneer and tomato",
+        "what can i make with bread",
+        "i have some vegetables",
+        "empty fridge what can i cook",
+        "ingredients i have are onion garlic and pasta",
+        "what dish can i prepare with these",
+        "help me use my ingredients",
+        "i got tomato onion and chickpeas",
+        "check my pantry",
+        "what can i make from my kitchen"
+      ],
+      "responses": [
+        "Let's cook with what you've got! 🥕 Tell me your ingredients, separated by commas — e.g. \"eggs, onion, tomato, bread\"."
+      ],
+      "context_set": "awaiting_ingredients",
+      "suggestions": [
+        "eggs, onion, tomato",
+        "rice, carrot, peas, soy sauce",
+        "chicken, garlic, lemon"
+      ]
+    },
+    {
+      "tag": "meal_suggestion",
+      "action": "suggest",
+      "patterns": [
+        "what should i eat",
+        "what should i eat today",
+        "i am hungry",
+        "suggest something to eat",
+        "what should i cook for dinner",
+        "dinner ideas",
+        "lunch ideas",
+        "breakfast ideas",
+        "give me a meal idea",
+        "i don't know what to eat",
+        "recommend a dish",
+        "something quick to cook",
+        "quick vegetarian dinner",
+        "suggest a healthy breakfast",
+        "i want something italian",
+        "indian food ideas",
+        "what's for dinner",
+        "suggest a dessert",
+        "i want something sweet",
+        "easy recipes",
+        "show me some recipes",
+        "recipe ideas",
+        "find me a recipe",
+        "something spicy",
+        "a snack idea",
+        "quick lunch under 15 minutes",
+        "vegan dinner ideas",
+        "mexican food",
+        "i am craving pasta",
+        "what to cook tonight",
+        "chicken recipes",
+        "food suggestions",
+        "recommend something for breakfast",
+        "what can i eat for lunch",
+        "something light to eat",
+        "craving something cheesy",
+        "something else",
+        "show me more",
+        "other options",
+        "another one",
+        "more ideas"
+      ],
+      "responses": [
+        "Here are some ideas"
+      ],
+      "suggestions": []
+    },
+    {
+      "tag": "surprise_me",
+      "action": "surprise",
+      "patterns": [
+        "surprise me",
+        "random recipe",
+        "pick something for me",
+        "you decide",
+        "anything is fine",
+        "give me a random dish",
+        "i can't decide",
+        "choose for me",
+        "dealer's choice",
+        "random meal",
+        "feeling lucky",
+        "pick a random recipe",
+        "surprise me again"
+      ],
+      "responses": [
+        "🎲 Surprise! Let's make this:"
+      ],
+      "suggestions": []
+    },
+    {
+      "tag": "recipe_request",
+      "action": "recipe_prompt",
+      "patterns": [
+        "how do i make it",
+        "give me the recipe",
+        "recipe please",
+        "show me how to cook it",
+        "how to cook",
+        "i want a recipe",
+        "teach me a recipe",
+        "step by step recipe",
+        "how to make a dish",
+        "cooking instructions",
+        "method please",
+        "how is it made"
+      ],
+      "responses": [
+        "Sure! Which dish? Type its name — e.g. \"how to make dal tadka\" — or tell me your ingredients and I'll find one."
+      ],
+      "suggestions": [
+        "How to make pancakes",
+        "How to make shakshuka",
+        "Show all recipes"
+      ]
+    },
+    {
+      "tag": "list_recipes",
+      "action": "list",
+      "patterns": [
+        "show all recipes",
+        "what recipes do you have",
+        "list your recipes",
+        "what dishes do you know",
+        "what cuisines do you know",
+        "recipe list",
+        "your recipe book",
+        "what can you cook",
+        "which recipes are available",
+        "all dishes"
+      ],
+      "responses": [
+        "📖 My recipe book"
+      ],
+      "suggestions": []
+    },
+    {
+      "tag": "substitution",
+      "action": "substitute",
+      "patterns": [
+        "what can i use instead of eggs",
+        "substitute for butter",
+        "i don't have milk",
+        "replacement for cream",
+        "egg substitute",
+        "no eggs what can i use",
+        "can i replace sugar",
+        "alternative to soy sauce",
+        "out of butter",
+        "swap for yogurt",
+        "what to use if i don't have lemon",
+        "substitute",
+        "i ran out of flour",
+        "dairy free alternative for milk",
+        "replace paneer with what",
+        "i am missing an ingredient",
+        "ingredient substitutes",
+        "ingredient swaps"
+      ],
+      "responses": [
+        "Which ingredient do you need to replace? 🔄 (e.g. egg, butter, milk, cream)"
+      ],
+      "suggestions": [
+        "Egg",
+        "Butter",
+        "Milk",
+        "Cream"
+      ]
+    },
+    {
+      "tag": "cooking_tips",
+      "patterns": [
+        "cooking tips",
+        "give me a cooking tip",
+        "how to cook better",
+        "kitchen hacks",
+        "tips for beginners",
+        "how to cook rice perfectly",
+        "how do i stop food sticking to the pan",
+        "how to chop onions without crying",
+        "how to make food tastier",
+        "beginner cooking advice",
+        "any cooking secrets",
+        "how to season food",
+        "another tip",
+        "one more tip"
+      ],
+      "responses": [
+        "👩‍🍳 Tip: Salt your pasta water until it tastes like the sea — it's the only chance to season the pasta itself.",
+        "👩‍🍳 Tip: Let the pan get hot before adding oil and food — it stops things from sticking and gives a better sear.",
+        "👩‍🍳 Tip: Chill onions for 15 minutes and use a sharp knife — fewer tears!",
+        "👩‍🍳 Tip: Rinse rice until the water runs clear, use about 1 : 1.5 rice to water, and rest it covered for 10 minutes after cooking.",
+        "👩‍🍳 Tip: A squeeze of lemon or a pinch of salt at the end brightens almost any dish.",
+        "👩‍🍳 Tip: Day-old cooked rice makes the best fried rice — fresh rice turns mushy."
+      ],
+      "suggestions": [
+        "Another tip",
+        "Surprise me"
+      ]
+    },
+    {
+      "tag": "healthy_eating",
+      "action": "healthy",
+      "patterns": [
+        "healthy food",
+        "something healthy",
+        "i am on a diet",
+        "low calorie meals",
+        "healthy recipes",
+        "i want to lose weight",
+        "high protein meal",
+        "light meal",
+        "nutritious food",
+        "healthy dinner",
+        "clean eating ideas",
+        "how many calories"
+      ],
+      "responses": [
+        "🥗 Healthy picks — all under 450 kcal per serving:"
+      ],
+      "suggestions": []
+    },
+    {
+      "tag": "meal_plan",
+      "action": "meal_plan",
+      "patterns": [
+        "plan my meals today",
+        "make a meal plan",
+        "meal plan for today",
+        "what should i eat all day",
+        "plan breakfast lunch and dinner",
+        "daily meal plan",
+        "plan my day of eating",
+        "weekly meal plan",
+        "help me plan meals",
+        "full day menu",
+        "another plan",
+        "plan again"
+      ],
+      "responses": [
+        "🗓️ Here's a meal plan for today:"
+      ],
+      "suggestions": []
+    },
+    {
+      "tag": "set_diet",
+      "action": "set_diet",
+      "patterns": [
+        "i am vegetarian",
+        "i am vegan",
+        "i don't eat meat",
+        "i'm a vegetarian",
+        "only vegetarian food",
+        "i eat gluten free",
+        "i am gluten intolerant",
+        "no meat please",
+        "i follow a vegan diet",
+        "i am pure veg",
+        "i eat everything",
+        "i am not vegetarian anymore",
+        "i eat non veg",
+        "remove my diet preference"
+      ],
+      "responses": [
+        "Got it!"
+      ],
+      "suggestions": []
+    }
+  ]
+}

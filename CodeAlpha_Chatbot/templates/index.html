@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ profile.name }} — your AI kitchen assistant</title>
+  <meta name="description" content="{{ profile.tagline }}">
+  <style>
+    :root { --ink:#1f1a17; --muted:#6f625a; --accent:#e8590c; --accent-soft:#fff4e6; --line:#f1e4d8; --bg:#fffaf5; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); }
+    a { color:inherit; text-decoration:none; }
+    nav { display:flex; align-items:center; gap:24px; padding:16px 6vw; border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(255,250,245,.95); backdrop-filter:blur(6px); z-index:5; }
+    nav .logo { font-weight:800; font-size:22px; color:var(--accent); }
+    nav .links { display:flex; gap:20px; margin-left:auto; color:var(--muted); font-size:15px; }
+    nav .links a:hover { color:var(--ink); }
+    .hero { padding:72px 6vw 64px; display:grid; grid-template-columns:1.15fr 1fr; gap:48px; align-items:center;
+            background:radial-gradient(circle at 85% 20%, #ffe8cc 0, transparent 45%), radial-gradient(circle at 10% 90%, #fff0e0 0, transparent 40%); }
+    .eyebrow { display:inline-block; background:var(--accent-soft); color:var(--accent); font-weight:600; font-size:13px; padding:6px 12px; border-radius:20px; margin-bottom:16px; }
+    .hero h1 { font-size:clamp(34px,5.2vw,58px); line-height:1.05; margin:0 0 18px; letter-spacing:-.02em; }
+    .hero h1 span { color:var(--accent); }
+    .hero p { color:var(--muted); font-size:18px; max-width:540px; line-height:1.55; }
+    .btn { display:inline-block; background:var(--accent); color:#fff; padding:13px 22px; border-radius:12px; font-weight:600; border:0; cursor:pointer; font-size:15px; }
+    .btn:hover { filter:brightness(1.05); }
+    .btn.ghost { background:#fff; color:var(--accent); border:1px solid var(--accent); margin-left:8px; }
+    .chat-preview { background:#fff; border-radius:22px; padding:22px; box-shadow:0 24px 60px rgba(232,89,12,.15); display:flex; flex-direction:column; gap:10px; font-size:15px; }
+    .bubble { padding:10px 14px; border-radius:14px; max-width:85%; line-height:1.45; }
+    .bubble.u { align-self:flex-end; background:var(--accent); color:#fff; border-bottom-right-radius:4px; }
+    .bubble.b { align-self:flex-start; background:#f8f1ea; border-bottom-left-radius:4px; }
+    section { padding:64px 6vw; }
+    h2 { font-size:30px; margin:0 0 8px; letter-spacing:-.01em; }
+    .sub { color:var(--muted); margin:0 0 28px; }
+    .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .step { background:#fff; border:1px solid var(--line); border-radius:18px; padding:22px; }
+    .step b { font-size:30px; display:block; margin-bottom:8px; }
+    .step h3 { margin:0 0 6px; font-size:18px; } .step p { margin:0; color:var(--muted); font-size:15px; }
+    .pantry { background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .chips { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:22px; }
+    .chip { border:1px solid var(--line); background:var(--bg); padding:9px 14px; border-radius:22px; cursor:pointer; font-size:15px; transition:all .12s; user-select:none; }
+    .chip:hover { border-color:var(--accent); }
+    .chip[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .pantry-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+    .pantry-actions small { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:18px; }
+    .card { border:1px solid var(--line); border-radius:18px; padding:18px; background:#fff; cursor:pointer; transition:transform .15s, box-shadow .15s; text-align:left; font:inherit; color:inherit; }
+    .card:hover { transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,.07); }
+    .card .emoji { font-size:44px; height:76px; display:flex; align-items:center; justify-content:center; background:var(--accent-soft); border-radius:14px; margin-bottom:12px; }
+    .card h4 { margin:0 0 6px; font-size:16px; }
+    .card small { color:var(--muted); }
+    .tag { display:inline-block; font-size:12px; padding:2px 8px; border-radius:10px; background:#ebfbee; color:#2b8a3e; margin-top:8px; }
+    .tag.nv { background:#fff5f5; color:#c92a2a; }
+    footer { padding:28px 6vw; color:var(--muted); font-size:14px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; }
+    @media (max-width:800px){ .hero{ grid-template-columns:1fr; padding-top:48px; } nav .links{ display:none; } .btn.ghost{ margin:10px 0 0; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">👩‍🍳 {{ profile.name }}</a>
+    <div class="links">
+      <a href="#how">How it works</a><a href="#pantry">Cook with what you have</a><a href="#recipes">Recipes</a><a href="/dashboard">Analytics</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="eyebrow">🤖 AI-powered cooking assistant</span>
+      <h1>Not sure what to eat? <span>Ask FoodieBot.</span></h1>
+      <p>{{ profile.name }} helps you decide what to eat, discover new recipes and cook delicious meals using the ingredients you already have at home.</p>
+      <button class="btn" onclick="FoodieChat.open()">💬 Chat with FoodieBot</button>
+      <a class="btn ghost" href="#pantry">🥕 Pick my ingredients</a>
+    </div>
+    <div class="chat-preview" aria-hidden="true">
+      <div class="bubble u">I have eggs, onion and tomato 🍅</div>
+      <div class="bubble b">🥕 You can make:<br>1. 🍳 <b>Masala Omelette</b> (3/5 ingredients)<br>2. 🍳 <b>Shakshuka</b> (3/5 ingredients)</div>
+      <div class="bubble u">How to make Masala Omelette</div>
+      <div class="bubble b">🍳 <b>Masala Omelette</b> · ⏱ 10 min<br>1. Finely chop the onion, tomato…</div>
+    </div>
+  </header>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <p class="sub">Just chat the way you'd talk to a friend who loves cooking.</p>
+    <div class="steps">
+      <div class="step"><b>🥕</b><h3>Tell it what you have</h3><p>"I have rice, carrots and peas". It ranks recipes by how many ingredients you already have.</p></div>
+      <div class="step"><b>🤔</b><h3>Or ask what to eat</h3><p>"Quick vegetarian dinner" or "something Indian under 30 minutes". It filters by meal, diet, time and cuisine.</p></div>
+      <div class="step"><b>📖</b><h3>Cook step by step</h3><p>Full recipes with time, calories, ingredients and clear steps, plus substitutes when you're missing something.</p></div>
+      <div class="step"><b>🌱</b><h3>It remembers your diet</h3><p>Say "I'm vegetarian" or "I'm vegan" and every suggestion respects it.</p></div>
+    </div>
+  </section>
+
+  <section id="pantry" class="pantry">
+    <h2>What's in your kitchen?</h2>
+    <p class="sub">Tap the ingredients you have and FoodieBot will find recipes for you.</p>
+    <div class="chips" id="pantry-chips">
+      {% for item in ["egg","onion","tomato","potato","rice","bread","milk","cheese","chicken","paneer","pasta","garlic","carrot","peas","bell pepper","chickpeas","lentils","banana","yogurt","avocado","flour","butter","lemon","soy sauce"] %}
+      <button type="button" class="chip" aria-pressed="false" data-item="{{ item }}">{{ item }}</button>
+      {% endfor %}
+    </div>
+    <div class="pantry-actions">
+      <button class="btn" id="find-btn">🔍 Find recipes</button>
+      <small id="pantry-count">Select at least one ingredient</small>
+    </div>
+  </section>
+
+  <section id="recipes">
+    <h2>From FoodieBot's recipe book</h2>
+    <p class="sub">{{ recipes|length }} recipes from Indian, Italian, Mexican, Chinese, Thai, Mediterranean and American kitchens. Tap one to cook it.</p>
+    <div class="grid">
+      {% for r in recipes %}
+      <button type="button" class="card" data-recipe="{{ r.name }}">
+        <div class="emoji">{{ r.emoji }}</div>
+        <h4>{{ r.name }}</h4>
+        <small>⏱ {{ r.time }} min · {{ r.cuisine|title }} · {{ r.calories }} kcal</small><br>
+        {% if 'vegan' in r.diets %}<span class="tag">🌱 Vegan</span>{% elif 'vegetarian' in r.diets %}<span class="tag">🥦 Vegetarian</span>{% else %}<span class="tag nv">🍗 Non-veg</span>{% endif %}
+      </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <footer>
+    <span>© {{ profile.name }} — built for the CodeAlpha Cloud Computing internship</span>
+    <a href="/dashboard">📊 Chatbot analytics</a>
+  </footer>
+
+  <script>
+    var selected = [];
+    var countEl = document.getElementById("pantry-count");
+    document.querySelectorAll("#pantry-chips .chip").forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        var on = chip.getAttribute("aria-pressed") !== "true";
+        chip.setAttribute("aria-pressed", on);
+        var item = chip.dataset.item;
+        selected = on ? selected.concat(item) : selected.filter(function (i) { return i !== item; });
+        countEl.textContent = selected.length ? selected.length + " selected: " + selected.join(", ") : "Select at least one ingredient";
+      });
+    });
+    document.getElementById("find-btn").addEventListener("click", function () {
+      if (!selected.length) { countEl.textContent = "👆 Tap a few ingredients first"; return; }
+      FoodieChat.send("I have " + selected.join(", "));
+    });
+    document.querySelectorAll("[data-recipe]").forEach(function (card) {
+      card.addEventListener("click", function () { FoodieChat.send("How to make " + card.dataset.recipe); });
+    });
+  </script>
+  <!-- The entire chatbot integration is this one line: -->
+  <script src="{{ url_for('static', filename='widget.js') }}" data-title="FoodieBot" data-subtitle="Your AI kitchen assistant" defer></script>
+</body>
+</html>

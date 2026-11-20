@@ -1,0 +1,441 @@
+[
+  {
+    "id": "masala_omelette", "name": "Masala Omelette", "emoji": "🍳",
+    "aliases": ["masala omelette", "omelette", "omelet", "masala omelet"],
+    "cuisine": "indian", "meals": ["breakfast"], "diets": ["vegetarian", "gluten_free"], "healthy": true,
+    "time": 10, "difficulty": "easy", "calories": 250, "servings": 1,
+    "ingredients": ["egg", "onion", "tomato", "green chili", "coriander"],
+    "pantry": ["salt", "turmeric", "oil"],
+    "steps": [
+      "Finely chop the onion, tomato, green chili and coriander.",
+      "Whisk 2 eggs with a pinch of salt and turmeric, then stir in the chopped vegetables.",
+      "Heat a little oil in a pan on medium heat and pour in the egg mixture.",
+      "Cook for 2 minutes until the edges set, flip, and cook 1 more minute.",
+      "Fold and serve hot with toast or chutney."
+    ]
+  },
+  {
+    "id": "pancakes", "name": "Fluffy Pancakes", "emoji": "🥞",
+    "aliases": ["pancakes", "pancake", "fluffy pancakes"],
+    "cuisine": "american", "meals": ["breakfast", "dessert"], "diets": ["vegetarian"], "healthy": false,
+    "time": 20, "difficulty": "easy", "calories": 350, "servings": 2,
+    "ingredients": ["flour", "milk", "egg", "sugar", "butter", "baking powder"],
+    "pantry": ["salt"],
+    "steps": [
+      "Mix 1 cup flour, 1 tbsp sugar, 2 tsp baking powder and a pinch of salt.",
+      "In another bowl whisk 1 cup milk, 1 egg and 2 tbsp melted butter.",
+      "Pour the wet mix into the dry mix and stir just until combined — a few lumps are fine.",
+      "Cook ¼ cup batter at a time on a buttered pan until bubbles appear, then flip.",
+      "Serve with honey, maple syrup or fruit."
+    ]
+  },
+  {
+    "id": "avocado_toast", "name": "Avocado Toast", "emoji": "🥑",
+    "aliases": ["avocado toast"],
+    "cuisine": "american", "meals": ["breakfast", "snack"], "diets": ["vegetarian", "vegan"], "healthy": true,
+    "time": 10, "difficulty": "easy", "calories": 300, "servings": 1,
+    "ingredients": ["bread", "avocado", "lemon", "chili flakes"],
+    "pantry": ["salt", "pepper"],
+    "steps": [
+      "Toast two slices of bread until golden.",
+      "Mash a ripe avocado with a squeeze of lemon, salt and pepper.",
+      "Spread the avocado on the toast.",
+      "Top with chili flakes (and a fried egg if you are not vegan)."
+    ]
+  },
+  {
+    "id": "poha", "name": "Kanda Poha", "emoji": "🍛",
+    "aliases": ["poha", "kanda poha"],
+    "cuisine": "indian", "meals": ["breakfast"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 20, "difficulty": "easy", "calories": 270, "servings": 2,
+    "ingredients": ["poha", "onion", "potato", "peanut", "curry leaves", "lemon"],
+    "pantry": ["mustard seeds", "turmeric", "salt", "sugar", "oil"],
+    "steps": [
+      "Rinse 2 cups of poha in a strainer, drain, and set aside for 5 minutes.",
+      "Fry a handful of peanuts in oil until crunchy, then remove.",
+      "In the same oil add mustard seeds and curry leaves, then the chopped onion and diced potato. Cook until soft.",
+      "Add turmeric, salt and a pinch of sugar, then the poha. Mix gently and steam for 2 minutes with the lid on.",
+      "Finish with the peanuts and a squeeze of lemon."
+    ]
+  },
+  {
+    "id": "overnight_oats", "name": "Overnight Oats", "emoji": "🥣",
+    "aliases": ["overnight oats", "oats"],
+    "cuisine": "american", "meals": ["breakfast"], "diets": ["vegetarian"], "healthy": true,
+    "time": 5, "difficulty": "easy", "calories": 320, "servings": 1,
+    "ingredients": ["oats", "milk", "yogurt", "banana", "honey"],
+    "pantry": [],
+    "steps": [
+      "Mix ½ cup oats, ½ cup milk and ¼ cup yogurt in a jar.",
+      "Stir in a spoon of honey.",
+      "Cover and refrigerate overnight (or at least 4 hours).",
+      "Top with sliced banana in the morning and enjoy cold."
+    ]
+  },
+  {
+    "id": "veg_fried_rice", "name": "Vegetable Fried Rice", "emoji": "🍚",
+    "aliases": ["fried rice", "vegetable fried rice", "veg fried rice"],
+    "cuisine": "chinese", "meals": ["lunch", "dinner"], "diets": ["vegetarian", "vegan"], "healthy": true,
+    "time": 20, "difficulty": "easy", "calories": 400, "servings": 2,
+    "ingredients": ["rice", "carrot", "peas", "bell pepper", "onion", "soy sauce", "garlic"],
+    "pantry": ["oil", "salt", "pepper"],
+    "steps": [
+      "Use cooked rice that has cooled (yesterday's leftover rice is perfect).",
+      "Heat oil on high heat and fry chopped garlic and onion for 1 minute.",
+      "Add diced carrot, peas and bell pepper and stir-fry for 3–4 minutes.",
+      "Add the rice and 2 tbsp soy sauce, tossing until every grain is hot and coated.",
+      "Season with pepper and serve."
+    ]
+  },
+  {
+    "id": "aglio_olio", "name": "Spaghetti Aglio e Olio", "emoji": "🍝",
+    "aliases": ["aglio e olio", "aglio olio", "garlic pasta", "spaghetti aglio e olio"],
+    "cuisine": "italian", "meals": ["lunch", "dinner"], "diets": ["vegetarian", "vegan"], "healthy": false,
+    "time": 15, "difficulty": "easy", "calories": 450, "servings": 2,
+    "ingredients": ["pasta", "garlic", "olive oil", "chili flakes", "parsley"],
+    "pantry": ["salt"],
+    "steps": [
+      "Boil the pasta in well-salted water until al dente. Save a cup of pasta water.",
+      "Meanwhile, gently cook sliced garlic in ¼ cup olive oil until pale golden.",
+      "Add chili flakes, then the drained pasta and a splash of pasta water.",
+      "Toss for a minute until glossy, then add chopped parsley and serve."
+    ]
+  },
+  {
+    "id": "tomato_pasta", "name": "Creamy Tomato Pasta", "emoji": "🍝",
+    "aliases": ["tomato pasta", "creamy tomato pasta", "red sauce pasta", "pink sauce pasta"],
+    "cuisine": "italian", "meals": ["lunch", "dinner"], "diets": ["vegetarian"], "healthy": false,
+    "time": 25, "difficulty": "easy", "calories": 520, "servings": 2,
+    "ingredients": ["pasta", "tomato", "garlic", "onion", "cream", "cheese", "basil"],
+    "pantry": ["olive oil", "salt", "pepper"],
+    "steps": [
+      "Boil the pasta until al dente and drain.",
+      "Sauté chopped onion and garlic in olive oil until soft.",
+      "Add chopped tomatoes, salt and pepper and simmer for 8–10 minutes until saucy.",
+      "Stir in the cream and grated cheese, then the pasta.",
+      "Finish with fresh basil."
+    ]
+  },
+  {
+    "id": "caprese_salad", "name": "Caprese Salad", "emoji": "🥗",
+    "aliases": ["caprese", "caprese salad"],
+    "cuisine": "italian", "meals": ["lunch", "snack"], "diets": ["vegetarian", "gluten_free"], "healthy": true,
+    "time": 10, "difficulty": "easy", "calories": 280, "servings": 2,
+    "ingredients": ["tomato", "mozzarella", "basil", "olive oil"],
+    "pantry": ["salt", "pepper"],
+    "steps": [
+      "Slice the tomatoes and mozzarella into rounds.",
+      "Arrange them alternately on a plate with basil leaves in between.",
+      "Drizzle with olive oil and season with salt and pepper."
+    ]
+  },
+  {
+    "id": "dal_tadka", "name": "Dal Tadka", "emoji": "🍲",
+    "aliases": ["dal tadka", "dal", "daal", "dal fry", "lentil curry"],
+    "cuisine": "indian", "meals": ["lunch", "dinner"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 35, "difficulty": "easy", "calories": 300, "servings": 3,
+    "ingredients": ["lentils", "onion", "tomato", "garlic", "ginger", "green chili"],
+    "pantry": ["cumin", "turmeric", "salt", "oil"],
+    "steps": [
+      "Rinse 1 cup lentils and pressure-cook (or simmer) with 3 cups water, turmeric and salt until soft.",
+      "Heat oil, add cumin seeds, then chopped garlic, ginger and green chili.",
+      "Add the onion and cook until golden, then the tomato until it turns soft.",
+      "Pour this tadka into the cooked lentils and simmer for 5 minutes.",
+      "Serve with rice or roti."
+    ]
+  },
+  {
+    "id": "chana_masala", "name": "Chana Masala", "emoji": "🍛",
+    "aliases": ["chana masala", "chole", "chickpea curry"],
+    "cuisine": "indian", "meals": ["lunch", "dinner"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 30, "difficulty": "medium", "calories": 380, "servings": 3,
+    "ingredients": ["chickpeas", "onion", "tomato", "garlic", "ginger", "green chili"],
+    "pantry": ["garam masala", "cumin", "turmeric", "salt", "oil"],
+    "steps": [
+      "Fry cumin seeds in oil, then add finely chopped onion and cook until brown.",
+      "Add garlic, ginger and green chili, then the chopped tomatoes. Cook until oil separates.",
+      "Add turmeric, garam masala and salt.",
+      "Add cooked or canned chickpeas with ½ cup water and simmer for 15 minutes, mashing a few.",
+      "Serve with rice, roti or bread."
+    ]
+  },
+  {
+    "id": "paneer_butter_masala", "name": "Paneer Butter Masala", "emoji": "🧈",
+    "aliases": ["paneer butter masala", "paneer makhani", "butter paneer"],
+    "cuisine": "indian", "meals": ["dinner"], "diets": ["vegetarian", "gluten_free"], "healthy": false,
+    "time": 35, "difficulty": "medium", "calories": 520, "servings": 3,
+    "ingredients": ["paneer", "tomato", "onion", "butter", "cream", "garlic", "ginger"],
+    "pantry": ["garam masala", "chili powder", "salt", "sugar"],
+    "steps": [
+      "Cook chopped onion, tomato, garlic and ginger in butter until soft, then blend to a smooth puree.",
+      "Return the puree to the pan with chili powder, garam masala, salt and a pinch of sugar.",
+      "Simmer for 5 minutes, then stir in the cream.",
+      "Add paneer cubes and simmer for 3 more minutes.",
+      "Serve with naan or rice."
+    ]
+  },
+  {
+    "id": "jeera_aloo", "name": "Jeera Aloo", "emoji": "🥔",
+    "aliases": ["jeera aloo", "cumin potatoes", "aloo jeera"],
+    "cuisine": "indian", "meals": ["lunch", "snack"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 20, "difficulty": "easy", "calories": 250, "servings": 2,
+    "ingredients": ["potato", "cumin", "green chili", "coriander"],
+    "pantry": ["turmeric", "salt", "oil"],
+    "steps": [
+      "Boil, peel and cube 3 potatoes.",
+      "Heat oil and add 1 tsp cumin seeds until they sizzle.",
+      "Add chopped green chili, then the potatoes, turmeric and salt.",
+      "Fry for 5 minutes until lightly crisp, then garnish with coriander."
+    ]
+  },
+  {
+    "id": "chicken_curry", "name": "Home-Style Chicken Curry", "emoji": "🍗",
+    "aliases": ["chicken curry", "home style chicken curry"],
+    "cuisine": "indian", "meals": ["dinner"], "diets": ["gluten_free"], "healthy": false,
+    "time": 45, "difficulty": "medium", "calories": 480, "servings": 3,
+    "ingredients": ["chicken", "onion", "tomato", "garlic", "ginger", "yogurt"],
+    "pantry": ["garam masala", "turmeric", "chili powder", "salt", "oil"],
+    "steps": [
+      "Marinate the chicken in yogurt, turmeric, chili powder and salt for 15 minutes.",
+      "Brown sliced onions in oil, then add garlic and ginger.",
+      "Add chopped tomatoes and garam masala and cook until thick.",
+      "Add the chicken and cook on medium heat for 20–25 minutes, covered, until tender.",
+      "Serve with rice or roti."
+    ]
+  },
+  {
+    "id": "chicken_stir_fry", "name": "Chicken Stir-Fry", "emoji": "🥡",
+    "aliases": ["chicken stir fry", "stir fry", "stirfry"],
+    "cuisine": "chinese", "meals": ["dinner"], "diets": [], "healthy": true,
+    "time": 25, "difficulty": "easy", "calories": 420, "servings": 2,
+    "ingredients": ["chicken", "bell pepper", "broccoli", "garlic", "ginger", "soy sauce"],
+    "pantry": ["oil", "cornstarch"],
+    "steps": [
+      "Slice the chicken thinly and toss with a little cornstarch and soy sauce.",
+      "Stir-fry the chicken in hot oil for 4–5 minutes until cooked, then set aside.",
+      "Fry garlic and ginger, then add the broccoli and bell pepper for 3 minutes.",
+      "Return the chicken, add 2 tbsp soy sauce and toss until glossy.",
+      "Serve over rice or noodles."
+    ]
+  },
+  {
+    "id": "lemon_garlic_chicken", "name": "Lemon Garlic Chicken & Potatoes", "emoji": "🍋",
+    "aliases": ["lemon garlic chicken", "lemon chicken"],
+    "cuisine": "mediterranean", "meals": ["dinner"], "diets": ["gluten_free"], "healthy": true,
+    "time": 40, "difficulty": "easy", "calories": 450, "servings": 2,
+    "ingredients": ["chicken", "lemon", "garlic", "potato"],
+    "pantry": ["olive oil", "salt", "pepper", "dried herbs"],
+    "steps": [
+      "Heat the oven to 200°C (400°F).",
+      "Toss chicken pieces and potato wedges with olive oil, crushed garlic, lemon juice, herbs, salt and pepper.",
+      "Spread on a tray and roast for 30–35 minutes until golden and cooked through.",
+      "Squeeze over more lemon before serving."
+    ]
+  },
+  {
+    "id": "bean_quesadilla", "name": "Cheesy Bean Quesadilla", "emoji": "🌮",
+    "aliases": ["quesadilla", "bean quesadilla", "cheesy quesadilla"],
+    "cuisine": "mexican", "meals": ["lunch", "snack"], "diets": ["vegetarian"], "healthy": false,
+    "time": 15, "difficulty": "easy", "calories": 450, "servings": 2,
+    "ingredients": ["tortilla", "beans", "cheese", "onion", "bell pepper"],
+    "pantry": ["chili powder", "oil"],
+    "steps": [
+      "Mash the beans with a pinch of chili powder.",
+      "Spread the beans over half of a tortilla, then add chopped onion, bell pepper and grated cheese.",
+      "Fold and cook in a lightly oiled pan for 2–3 minutes per side until the cheese melts.",
+      "Cut into wedges and serve with salsa."
+    ]
+  },
+  {
+    "id": "veggie_tacos", "name": "Veggie Tacos", "emoji": "🌮",
+    "aliases": ["tacos", "taco", "veggie tacos"],
+    "cuisine": "mexican", "meals": ["dinner"], "diets": ["vegetarian", "vegan"], "healthy": true,
+    "time": 20, "difficulty": "easy", "calories": 400, "servings": 2,
+    "ingredients": ["tortilla", "beans", "corn", "tomato", "onion", "avocado", "lime"],
+    "pantry": ["cumin", "chili powder", "salt", "oil"],
+    "steps": [
+      "Cook the beans and corn with cumin, chili powder and salt for 5 minutes.",
+      "Dice the tomato and onion and slice the avocado.",
+      "Warm the tortillas in a dry pan.",
+      "Fill each tortilla with beans and corn, top with tomato, onion and avocado, and squeeze over lime."
+    ]
+  },
+  {
+    "id": "guacamole", "name": "Guacamole", "emoji": "🥑",
+    "aliases": ["guacamole", "guac"],
+    "cuisine": "mexican", "meals": ["snack"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 10, "difficulty": "easy", "calories": 230, "servings": 2,
+    "ingredients": ["avocado", "tomato", "onion", "lime", "coriander"],
+    "pantry": ["salt"],
+    "steps": [
+      "Mash 2 ripe avocados with a fork.",
+      "Mix in finely chopped tomato, onion and coriander.",
+      "Season with lime juice and salt.",
+      "Serve with chips, tacos or toast."
+    ]
+  },
+  {
+    "id": "greek_salad", "name": "Greek Salad", "emoji": "🥗",
+    "aliases": ["greek salad"],
+    "cuisine": "mediterranean", "meals": ["lunch"], "diets": ["vegetarian", "gluten_free"], "healthy": true,
+    "time": 10, "difficulty": "easy", "calories": 250, "servings": 2,
+    "ingredients": ["cucumber", "tomato", "onion", "feta", "olives"],
+    "pantry": ["olive oil", "oregano", "salt"],
+    "steps": [
+      "Chop the cucumber and tomatoes into chunks and thinly slice the onion.",
+      "Add the olives and crumble the feta on top.",
+      "Drizzle with olive oil, sprinkle oregano and a pinch of salt, and toss gently."
+    ]
+  },
+  {
+    "id": "hummus", "name": "Classic Hummus", "emoji": "🫘",
+    "aliases": ["hummus", "houmous"],
+    "cuisine": "mediterranean", "meals": ["snack"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 10, "difficulty": "easy", "calories": 200, "servings": 4,
+    "ingredients": ["chickpeas", "garlic", "lemon", "tahini"],
+    "pantry": ["olive oil", "salt", "cumin"],
+    "steps": [
+      "Blend cooked chickpeas, 1 garlic clove, the juice of 1 lemon and 3 tbsp tahini.",
+      "Add 2–3 tbsp cold water and blend until very smooth.",
+      "Season with salt and cumin.",
+      "Drizzle with olive oil and serve with veggies or pita."
+    ]
+  },
+  {
+    "id": "thai_green_curry", "name": "Thai Green Curry", "emoji": "🍜",
+    "aliases": ["thai green curry", "green curry", "thai curry"],
+    "cuisine": "thai", "meals": ["dinner"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 30, "difficulty": "medium", "calories": 450, "servings": 2,
+    "ingredients": ["coconut milk", "green curry paste", "tofu", "bell pepper", "broccoli"],
+    "pantry": ["oil", "salt", "sugar"],
+    "steps": [
+      "Fry 2 tbsp green curry paste in a little oil for 1 minute.",
+      "Pour in a can of coconut milk and bring to a gentle simmer.",
+      "Add tofu cubes, broccoli and bell pepper and cook for 8–10 minutes.",
+      "Season with salt and a pinch of sugar, and serve with rice."
+    ]
+  },
+  {
+    "id": "peanut_noodles", "name": "Peanut Noodles", "emoji": "🍜",
+    "aliases": ["peanut noodles", "peanut butter noodles"],
+    "cuisine": "thai", "meals": ["lunch", "dinner"], "diets": ["vegetarian", "vegan"], "healthy": false,
+    "time": 15, "difficulty": "easy", "calories": 480, "servings": 2,
+    "ingredients": ["noodles", "peanut butter", "soy sauce", "garlic", "carrot"],
+    "pantry": ["sugar", "chili flakes"],
+    "steps": [
+      "Cook the noodles and drain.",
+      "Whisk 3 tbsp peanut butter, 2 tbsp soy sauce, grated garlic, a pinch of sugar and a little hot water into a sauce.",
+      "Toss the noodles with the sauce and grated carrot.",
+      "Top with chili flakes and serve warm or cold."
+    ]
+  },
+  {
+    "id": "tomato_soup", "name": "Roasted Tomato Soup", "emoji": "🍅",
+    "aliases": ["tomato soup", "roasted tomato soup", "soup"],
+    "cuisine": "american", "meals": ["lunch", "dinner"], "diets": ["vegetarian", "vegan", "gluten_free"], "healthy": true,
+    "time": 30, "difficulty": "easy", "calories": 180, "servings": 2,
+    "ingredients": ["tomato", "onion", "garlic", "carrot"],
+    "pantry": ["olive oil", "salt", "pepper"],
+    "steps": [
+      "Cook chopped onion, garlic and carrot in olive oil for 5 minutes.",
+      "Add 6 chopped tomatoes and 2 cups of water, then simmer for 15 minutes.",
+      "Blend until smooth and season with salt and pepper.",
+      "Serve hot with toast."
+    ]
+  },
+  {
+    "id": "mug_cake", "name": "Chocolate Mug Cake", "emoji": "🍫",
+    "aliases": ["mug cake", "chocolate mug cake", "chocolate cake", "cake"],
+    "cuisine": "american", "meals": ["dessert"], "diets": ["vegetarian"], "healthy": false,
+    "time": 5, "difficulty": "easy", "calories": 400, "servings": 1,
+    "ingredients": ["flour", "sugar", "cocoa", "milk", "butter"],
+    "pantry": ["baking powder", "salt"],
+    "steps": [
+      "In a large mug mix 4 tbsp flour, 3 tbsp sugar, 2 tbsp cocoa, ¼ tsp baking powder and a pinch of salt.",
+      "Stir in 3 tbsp milk and 2 tbsp melted butter until smooth.",
+      "Microwave for 70–90 seconds until risen and just set.",
+      "Let it cool for a minute and enjoy (great with ice cream)."
+    ]
+  },
+  {
+    "id": "banana_smoothie", "name": "Banana Smoothie", "emoji": "🍌",
+    "aliases": ["banana smoothie", "smoothie"],
+    "cuisine": "american", "meals": ["breakfast", "snack"], "diets": ["vegetarian", "gluten_free"], "healthy": true,
+    "time": 5, "difficulty": "easy", "calories": 250, "servings": 1,
+    "ingredients": ["banana", "milk", "yogurt", "honey"],
+    "pantry": ["ice"],
+    "steps": [
+      "Add a banana, 1 cup milk, ½ cup yogurt and 1 tsp honey to a blender.",
+      "Add a few ice cubes and blend until smooth.",
+      "Pour and serve immediately."
+    ]
+  },
+  {
+    "id": "french_toast", "name": "French Toast", "emoji": "🍞",
+    "aliases": ["french toast"],
+    "cuisine": "american", "meals": ["breakfast", "dessert"], "diets": ["vegetarian"], "healthy": false,
+    "time": 15, "difficulty": "easy", "calories": 330, "servings": 2,
+    "ingredients": ["bread", "egg", "milk", "sugar", "cinnamon"],
+    "pantry": ["butter"],
+    "steps": [
+      "Whisk 2 eggs, ½ cup milk, 1 tbsp sugar and a pinch of cinnamon.",
+      "Dip each slice of bread in the mixture for a few seconds on each side.",
+      "Cook in a buttered pan for 2 minutes per side until golden.",
+      "Serve with honey, syrup or fruit."
+    ]
+  },
+  {
+    "id": "grilled_cheese", "name": "Grilled Cheese Sandwich", "emoji": "🧀",
+    "aliases": ["grilled cheese", "cheese sandwich", "grilled cheese sandwich", "sandwich"],
+    "cuisine": "american", "meals": ["lunch", "snack"], "diets": ["vegetarian"], "healthy": false,
+    "time": 10, "difficulty": "easy", "calories": 400, "servings": 1,
+    "ingredients": ["bread", "cheese", "butter"],
+    "pantry": [],
+    "steps": [
+      "Butter one side of two slices of bread.",
+      "Put cheese between the slices with the buttered sides facing out.",
+      "Cook in a pan on medium-low heat for 3 minutes per side until golden and melted."
+    ]
+  },
+  {
+    "id": "shakshuka", "name": "Shakshuka", "emoji": "🍳",
+    "aliases": ["shakshuka", "eggs in tomato sauce"],
+    "cuisine": "mediterranean", "meals": ["breakfast", "dinner"], "diets": ["vegetarian", "gluten_free"], "healthy": true,
+    "time": 25, "difficulty": "easy", "calories": 320, "servings": 2,
+    "ingredients": ["egg", "tomato", "onion", "bell pepper", "garlic"],
+    "pantry": ["cumin", "paprika", "olive oil", "salt"],
+    "steps": [
+      "Cook sliced onion and bell pepper in olive oil until soft, then add garlic, cumin and paprika.",
+      "Add chopped tomatoes and simmer for 10 minutes into a thick sauce.",
+      "Make small wells and crack an egg into each.",
+      "Cover and cook for 5–7 minutes until the whites are set. Serve with bread."
+    ]
+  },
+  {
+    "id": "mango_lassi", "name": "Mango Lassi", "emoji": "🥭",
+    "aliases": ["mango lassi", "lassi"],
+    "cuisine": "indian", "meals": ["dessert", "snack"], "diets": ["vegetarian", "gluten_free"], "healthy": true,
+    "time": 5, "difficulty": "easy", "calories": 220, "servings": 2,
+    "ingredients": ["mango", "yogurt", "milk", "sugar"],
+    "pantry": ["cardamom", "ice"],
+    "steps": [
+      "Blend 1 cup chopped mango, 1 cup yogurt, ½ cup milk and 1–2 tbsp sugar.",
+      "Add a pinch of cardamom and a few ice cubes and blend again.",
+      "Serve chilled."
+    ]
+  },
+  {
+    "id": "egg_fried_rice", "name": "Egg Fried Rice", "emoji": "🍳",
+    "aliases": ["egg fried rice"],
+    "cuisine": "chinese", "meals": ["lunch", "dinner"], "diets": ["vegetarian"], "healthy": false,
+    "time": 15, "difficulty": "easy", "calories": 450, "servings": 2,
+    "ingredients": ["rice", "egg", "onion", "garlic", "soy sauce"],
+    "pantry": ["oil", "pepper"],
+    "steps": [
+      "Scramble 2 eggs in hot oil, then push them aside.",
+      "Add chopped garlic and onion and fry for 1 minute.",
+      "Add the cold cooked rice and soy sauce and toss on high heat for 3 minutes.",
+      "Mix with the eggs, season with pepper and serve."
+    ]
+  }
+]

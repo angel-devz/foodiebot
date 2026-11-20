@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chatbot Analytics — {{ profile.name }}</title>
+  <style>
+    :root { --ink:#111827; --muted:#6b7280; --accent:#e8590c; --line:#e5e7eb; --bg:#fffaf5; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+    header { background:#fff; border-bottom:1px solid var(--line); padding:16px 5vw; display:flex; align-items:center; gap:16px; }
+    header h1 { font-size:20px; margin:0; } header a { margin-left:auto; color:var(--accent); font-weight:600; text-decoration:none; }
+    main { padding:24px 5vw 48px; }
+    .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px; margin-bottom:24px; }
+    .kpi { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; }
+    .kpi span { color:var(--muted); font-size:13px; } .kpi b { display:block; font-size:28px; margin-top:6px; }
+    .cols { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .panel { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; overflow:auto; }
+    .panel h2 { font-size:16px; margin:0 0 14px; }
+    .bar { display:grid; grid-template-columns:150px 1fr 40px; gap:10px; align-items:center; margin:8px 0; font-size:14px; }
+    .bar div { height:12px; background:var(--accent); border-radius:6px; min-width:2px; }
+    .bar .fb { background:#f59e0b; }
+    table { width:100%; border-collapse:collapse; font-size:14px; }
+    th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+    th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; }
+    .empty { color:var(--muted); font-size:14px; }
+    .tag { background:#fff4e6; color:var(--accent); padding:2px 8px; border-radius:10px; font-size:12px; white-space:nowrap; }
+    .tag.fallback { background:#fef3c7; color:#b45309; }
+    @media (max-width:800px){ .cols{ grid-template-columns:1fr; } .bar{ grid-template-columns:110px 1fr 34px; } }
+  </style>
+</head>
+<body>
+  <header><h1>📊 FoodieBot analytics</h1><a href="/">← Back to FoodieBot</a></header>
+  <main>
+    <div class="kpis">
+      <div class="kpi"><span>Messages</span><b id="k-total">–</b></div>
+      <div class="kpi"><span>Conversations</span><b id="k-sessions">–</b></div>
+      <div class="kpi"><span>Answer rate</span><b id="k-answer">–</b></div>
+      <div class="kpi"><span>Avg confidence</span><b id="k-conf">–</b></div>
+      <div class="kpi"><span>Avg response time</span><b id="k-lat">–</b></div>
+      <div class="kpi"><span>User satisfaction</span><b id="k-sat">–</b></div>
+    </div>
+    <div class="cols">
+      <div class="panel"><h2>Top intents</h2><div id="intents"></div></div>
+      <div class="panel"><h2>Unanswered questions (add these to training data)</h2><div id="unanswered"></div></div>
+    </div>
+    <div class="panel" style="margin-top:16px"><h2>Recent messages</h2><div id="recent"></div></div>
+  </main>
+  <script>
+    function pct(v) { return v == null ? "–" : Math.round(v * 100) + "%"; }
+    function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+    function load() {
+      fetch("/api/stats").then(function (r) { return r.json(); }).then(function (s) {
+        document.getElementById("k-total").textContent = s.total_messages;
+        document.getElementById("k-sessions").textContent = s.sessions;
+        document.getElementById("k-answer").textContent = pct(s.answer_rate);
+        document.getElementById("k-conf").textContent = pct(s.avg_confidence);
+        document.getElementById("k-lat").textContent = s.avg_latency_ms == null ? "–" : s.avg_latency_ms + " ms";
+        document.getElementById("k-sat").textContent = pct(s.feedback.satisfaction);
+
+        var max = Math.max.apply(null, s.top_intents.map(function (i) { return i.n; }).concat([1]));
+        document.getElementById("intents").innerHTML = s.top_intents.length ? s.top_intents.map(function (i) {
+          return '<div class="bar"><span>' + esc(i.intent) + '</span><div class="' + (i.intent === "fallback" ? "fb" : "") +
+            '" style="width:' + (i.n / max * 100) + '%"></div><span>' + i.n + '</span></div>';
+        }).join("") : '<p class="empty">No messages yet — open the home page and chat with FoodieBot.</p>';
+
+        document.getElementById("unanswered").innerHTML = s.unanswered.length ?
+          "<table><tr><th>Message</th><th>Confidence</th></tr>" + s.unanswered.map(function (u) {
+            return "<tr><td>" + esc(u.user_text) + "</td><td>" + pct(u.confidence) + "</td></tr>";
+          }).join("") + "</table>" : '<p class="empty">Nothing unanswered 🎉</p>';
+
+        document.getElementById("recent").innerHTML = s.recent.length ?
+          "<table><tr><th>Time (UTC)</th><th>User message</th><th>Intent</th><th>Confidence</th><th>Feedback</th></tr>" +
+          s.recent.map(function (m) {
+            return "<tr><td>" + esc(m.created_at.replace("T", " ").slice(0, 19)) + "</td><td>" + esc(m.user_text) +
+              '</td><td><span class="tag ' + (m.intent === "fallback" ? "fallback" : "") + '">' + esc(m.intent) +
+              "</span></td><td>" + pct(m.confidence) + "</td><td>" + (m.feedback === 1 ? "👍" : m.feedback === -1 ? "👎" : "") + "</td></tr>";
+          }).join("") + "</table>" : '<p class="empty">No messages yet.</p>';
+      });
+    }
+    load(); setInterval(load, 5000);
+  </script>
+</body>
+</html>
