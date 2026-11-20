@@ -2,6 +2,10 @@
 
 **CodeAlpha Cloud Computing Internship — Task 4: Making a Chatbot**
 
+🌐 **Live demo:** https://foodiebot-9i7c.onrender.com · 📊 [Analytics dashboard](https://foodiebot-9i7c.onrender.com/dashboard)
+
+> Hosted on Render's free plan: the first visit after a quiet period may take ~40 seconds while the server wakes up.
+
 **FoodieBot** is an intelligent chatbot that helps users **decide what to eat**, **discover recipes** and **prepare delicious meals using ingredients they already have at home**.
 
 It is a retrieval-based AI chatbot: a machine-learning model works out what the user wants, and a recipe search engine finds the best answer from a book of 31 recipes. It plugs into any website with **one line of HTML**, answers instantly, learns your diet, logs every conversation for analytics, and ships as a Docker container ready for cloud deployment.
@@ -120,14 +124,14 @@ Open <http://localhost:8080>.
 
 The app is a container listening on `$PORT`, so it runs on any container platform:
 
-- **Render (free)**: push this repo to GitHub, then in Render choose **New + → Blueprint** and select the repo. `render.yaml` sets everything up.
+- **Render (free)** — live at https://foodiebot-9i7c.onrender.com: in Render choose **New + → Web Service**, select the repo, set **Root Directory** to `CodeAlpha_Chatbot`, runtime **Docker**, plan **Free** and health check path `/health`.
 - **Google Cloud Run**: `gcloud run deploy foodiebot --source . --allow-unauthenticated`
 - **AWS App Runner / Azure Container Apps**: point them at the Docker image; health check path `/health`.
 
 ## 🔌 Add FoodieBot to any website
 
 ```html
-<script src="https://YOUR-DEPLOYED-URL/static/widget.js"
+<script src="https://foodiebot-9i7c.onrender.com/static/widget.js"
         data-title="FoodieBot" data-accent="#e8590c" defer></script>
 ```
 
