@@ -1,6 +1,4 @@
-# CodeAlpha_Chatbot — 👩‍🍳 FoodieBot
-
-**CodeAlpha Cloud Computing Internship — Task 4: Making a Chatbot**
+# 👩‍🍳 FoodieBot
 
 🌐 **Live demo:** https://foodiebot-9i7c.onrender.com · 📊 [Analytics dashboard](https://foodiebot-9i7c.onrender.com/dashboard)
 
@@ -66,7 +64,7 @@ It understands typos (*"waht shuold i eat"*), Indian ingredient names (*aloo, da
 ## 📁 Project structure
 
 ```
-CodeAlpha_Chatbot/
+foodiebot/
 ├── app.py                 # Flask web server + REST API
 ├── train.py               # trains the model, prints the accuracy report
 ├── chatbot/
@@ -95,8 +93,8 @@ CodeAlpha_Chatbot/
 Requires Python 3.10+.
 
 ```bash
-git clone https://github.com/<your-username>/CodeAlpha_Chatbot.git
-cd CodeAlpha_Chatbot
+git clone https://github.com/<your-username>/foodiebot.git
+cd foodiebot
 pip install -r requirements.txt
 python train.py        # trains the model and prints the accuracy report
 python app.py          # http://localhost:5000
@@ -124,7 +122,7 @@ Open <http://localhost:8080>.
 
 The app is a container listening on `$PORT`, so it runs on any container platform:
 
-- **Render (free)** — live at https://foodiebot-9i7c.onrender.com: in Render choose **New + → Web Service**, select the repo, set **Root Directory** to `CodeAlpha_Chatbot`, runtime **Docker**, plan **Free** and health check path `/health`.
+- **Render (free)** — live at https://foodiebot-9i7c.onrender.com: in Render choose **New + → Web Service**, select the repo, set **Root Directory** to `foodiebot`, runtime **Docker**, plan **Free** and health check path `/health`.
 - **Google Cloud Run**: `gcloud run deploy foodiebot --source . --allow-unauthenticated`
 - **AWS App Runner / Azure Container Apps**: point them at the Docker image; health check path `/health`.
 
@@ -178,6 +176,3 @@ Tests: 30 passed
 
 Python · Flask · scikit-learn · SQLite · vanilla JavaScript · Docker · gunicorn
 
----
-
-Made for the **CodeAlpha** Cloud Computing Internship.

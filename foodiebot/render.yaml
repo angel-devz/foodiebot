@@ -2,7 +2,7 @@
 # New + > Blueprint > select this repository.
 services:
   - type: web
-    name: codealpha-chatbot
+    name: foodiebot
     runtime: docker
     plan: free
     healthCheckPath: /health
